@@ -2,14 +2,43 @@ const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  type User {
+    id: ID!
+    name: String!
+    username: String!
+    email: String!
+    password: String!
+    age: Int!
+    gender: String!
+  }
+
+  type Error {
+    field: String!
+    message: String!
+  }
+
+  type UserResponse {
+    errors: [Error]
+    user: User
+  }
+
   type Query {
-    hello: String
+    user(id: String!): UserResponse
+    users: [User]
+    
+  }
+
+  type Mutation {
+    register(id: ID!, name: String!, username: String!, email: String!, password: String!, age: Int!, gender: String!): UserResponse
+    login(username: String!, password: String): Boolean!
   }
 `;
 
 const resolvers = {
   Query: {
-    hello: () => 'Hello world!',
+    user: () => 'Hello world!',
+    users: () => {}
+
   },
 };
 
