@@ -1,7 +1,11 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
+
+const databaseConnection = require("./config/databaseConnection");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
+
+databaseConnection();
 
 (async () => {
   const server = new ApolloServer({ typeDefs, resolvers });

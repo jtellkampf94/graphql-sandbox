@@ -1,0 +1,26 @@
+[
+  {
+    "name": "james",
+    "username": "jamessmith1",
+    "email": "james@gmail.com",
+    "password": "cararegreat",
+    "age": 20,
+    "gender": "male"
+  },
+  {
+    "name": "yohann",
+    "username": "yohannsmith1",
+    "email": "yohann@gmail.com",
+    "password": "cararegreat",
+    "age": 20,
+    "gender": "male"
+  },
+  {
+    "name": "mike",
+    "username": "mikesmith1",
+    "email": "mike@gmail.com",
+    "password": "cararegreat",
+    "age": 20,
+    "gender": "male"
+  }
+]

@@ -41,16 +41,16 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(id: String!): UserResponse
-    users: [User]
+    user(id: String!): User!
+    # users: [User]
   }
 
-  type Mutation {
-    register(user: UserInput!): UserResponse!
-    login(user: LoginInput!): BooleanResponse!
-    updateUser(id: String!, user: UserInput!): UserResponse!
-    deleteUser(id: String!): BooleanResponse!
-  }
+  # type Mutation {
+  #   register(user: UserInput!): UserResponse!
+  #   login(user: LoginInput!): BooleanResponse!
+  #   updateUser(id: String!, user: UserInput!): UserResponse!
+  #   deleteUser(id: String!): BooleanResponse!
+  # }
 `;
 
 module.exports = typeDefs;

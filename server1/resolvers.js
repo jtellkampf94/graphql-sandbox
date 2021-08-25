@@ -1,7 +1,6 @@
 const resolvers = {
   Query: {
-    user: () => "Hello world!",
-    users: () => {},
+    user: async (parent, args, context, info) => {},
   },
 };
 
