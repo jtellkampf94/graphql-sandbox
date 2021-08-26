@@ -45,12 +45,12 @@ const typeDefs = gql`
     # users: [User]
   }
 
-  # type Mutation {
-  #   register(user: UserInput!): UserResponse!
-  #   login(user: LoginInput!): BooleanResponse!
-  #   updateUser(id: String!, user: UserInput!): UserResponse!
-  #   deleteUser(id: String!): BooleanResponse!
-  # }
+  type Mutation {
+    register(user: UserInput!): UserResponse!
+    #   login(user: LoginInput!): BooleanResponse!
+    #   updateUser(id: String!, user: UserInput!): UserResponse!
+    #   deleteUser(id: String!): BooleanResponse!
+  }
 `;
 
 module.exports = typeDefs;

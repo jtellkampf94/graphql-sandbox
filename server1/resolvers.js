@@ -17,6 +17,15 @@ const resolvers = {
       };
     },
   },
+  Mutation: {
+    register: async (parent, args, context, info) => {
+      const { user } = args;
+
+      const newUser = await User.create(user);
+
+      return { user: newUser, errors: null };
+    },
+  },
 };
 
 module.exports = resolvers;
