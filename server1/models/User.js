@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
     username: {
       type: String,
       required: [true, "Please enter your username"],
-      unique: true,
+      unique: [true, "Username is already taken"],
       maxLength: [30, "Your username cannot exceed 30 characters"],
     },
     email: {

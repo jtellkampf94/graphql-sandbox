@@ -17,13 +17,14 @@ const typeDefs = gql`
   }
 
   type UserResponse {
-    errors: [Error]
+    success: Boolean!
+    errors: [Error!]
     user: User
   }
 
   type BooleanResponse {
     success: Boolean!
-    errors: [Error]
+    errors: [Error!]
   }
 
   input UserInput {
@@ -41,7 +42,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(id: String!): User!
+    user(id: String!): UserResponse!
     # users: [User]
   }
 
