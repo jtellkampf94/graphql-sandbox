@@ -3,7 +3,7 @@ const formatError = require("./utils/formatError");
 
 const resolvers = {
   Query: {
-    user: async (parent, args, context, info) => {
+    getUser: async (parent, args, context, info) => {
       const { id } = args;
       try {
         const user = await User.findById(id);

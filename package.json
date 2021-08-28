@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-one": "nodemon server1/index.js",
-    "start-one-seeder": "node server1/utils/seeder.js"
+    "server-one": "nodemon server1/index.js",
+    "server-one-seeder": "node server1/utils/seeder.js"
   },
   "keywords": [],
   "author": "",
