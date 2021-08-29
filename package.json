@@ -6,7 +6,7 @@
   "scripts": {
     "server-one": "nodemon --exec ts-node server1/index.ts",
     "server-one-seeder": "node server1/utils/seeder.js",
-    "server-two": "nodemon server2/index.js"
+    "server-two": "nodemon server2/index.js --ext js,graphql"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "apollo-server-express": "^3.1.2",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "graphql-import": "^1.0.2",
     "mongoose": "^6.0.0",
     "validator": "^13.6.0"
   },
