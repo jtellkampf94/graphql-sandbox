@@ -1,8 +1,19 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
-const bcrypt = require("bcryptjs");
+import mongoose from "mongoose";
+import validator from "validator";
+import bcrypt from "bcryptjs";
 
-const userSchema = new mongoose.Schema(
+interface User {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+  age: number;
+  gender: "male" | "female";
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const userSchema = new mongoose.Schema<User>(
   {
     name: {
       type: String,
@@ -58,4 +69,4 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+export default User;

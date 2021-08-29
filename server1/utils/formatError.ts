@@ -1,12 +1,20 @@
-const formatError = (error) => {
-  const formattedError = {
+interface FormattedError {
+  success: boolean;
+  errors: Array<{ field: string; message: string }> | [];
+}
+
+const formatError = (error: any) => {
+  let formattedError: FormattedError = {
     success: false,
     errors: [],
   };
 
   // Invalid Mongoose Object Id error
   if (error.name === "CastError") {
-    formattedError.errors.push({ field: "id", message: "Not found" });
+    formattedError.errors = [
+      ...formattedError.errors,
+      { field: "id", message: "Not found" },
+    ];
   }
 
   // Mongoose Duplicate key error
@@ -16,21 +24,26 @@ const formatError = (error) => {
 
     const field = error.message.slice(startIndex, endIndex);
 
-    formattedError.errors.push({
-      field,
-      message:
-        field.charAt(0).toUpperCase() + field.slice(1) + " already taken",
-    });
+    formattedError.errors = [
+      ...formattedError.errors,
+      {
+        field,
+        message:
+          field.charAt(0).toUpperCase() + field.slice(1) + " already taken",
+      },
+    ];
   }
 
   // Mongoose Validation error
   if (error.name === "ValidationError") {
     const errors = Object.values(error.errors).map((error) => ({
+      //@ts-ignore
       field: error.path,
+      //@ts-ignore
       message: error.message,
     }));
 
-    formattedError.errors = formattedError.errors.concat(errors);
+    formattedError.errors = [...formattedError.errors, ...errors];
   }
 
   if (formattedError.errors.length === 0) {
@@ -40,4 +53,4 @@ const formatError = (error) => {
   return formattedError;
 };
 
-module.exports = formatError;
+export default formatError;
