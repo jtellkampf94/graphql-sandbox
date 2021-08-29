@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server-one": "nodemon --exec ts-node server1/index.ts",
-    "server-one-seeder": "node server1/utils/seeder.js"
+    "server-one-seeder": "node server1/utils/seeder.js",
+    "server-two": "nodemon server2/index.js"
   },
   "keywords": [],
   "author": "",
