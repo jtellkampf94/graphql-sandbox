@@ -6,6 +6,10 @@ type Query {
   post: Post!
 }
 
+type Subscription {
+  count: Int!
+}
+
 type User {
   id: ID!
   name: String!
