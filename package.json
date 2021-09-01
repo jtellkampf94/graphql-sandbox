@@ -7,7 +7,9 @@
     "server-one": "nodemon --exec ts-node server1/index.ts",
     "server-one-seeder": "node server1/utils/seeder.js",
     "server-two": "nodemon server2/index.js --ext js,graphql",
-    "server-three": "nodemon --exec ts-node server3/index.ts"
+    "server-three": "nodemon --exec ts-node server3/index.ts",
+    "server-four": "nodemon --exec ts-node server4/index.ts",
+    "server-four-seed": "ts-node server4/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
     "@types/node": "^16.7.5",
     "@types/validator": "^13.6.3",
     "nodemon": "^2.0.12",
