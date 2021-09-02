@@ -10,7 +10,8 @@
     "server-three": "nodemon --exec ts-node server3/index.ts",
     "server-four": "nodemon --exec ts-node server4/index.ts",
     "server-four-seed": "ts-node server4/seed.ts",
-    "server-five": "nodemon --exec ts-node server5/index.ts --ext js,graphql"
+    "server-five": "nodemon --exec ts-node server5/index.ts --ext ts,graphql",
+    "server-six": "nodemon --exec ts-node server6/index.ts --ext ts,graphql"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,8 @@
     "graphql-scalars": "^1.10.0",
     "graphql-subscriptions": "^1.2.1",
     "mongoose": "^6.0.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
     "validator": "^13.6.0"
   },
   "devDependencies": {
